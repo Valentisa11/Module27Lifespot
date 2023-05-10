@@ -1,4 +1,4 @@
-﻿﻿ /* Свойства стиля элемента. Подробнее о них в модуле по CSS */
+/* Свойства стиля элемента. Подробнее о них в модуле по CSS */
 .bordered {
     border: 2px solid black;
     background-color: azure;
@@ -8,21 +8,21 @@
 .video-container {
     display: inline-block;
     padding-left: 1%;
-    padding-top: 0%;
+    padding-top: 1%;
 }
 
 .navbar {
-    color: darkgray;
-    padding-left: 15%;
+    color: #cde402;
+    padding-left: 12%;
 }
 
     .navbar p:hover {
-        background: green;
+        background: #5966fa;
     }
 
 /*Глобальные стили для хедеров на всём сайте*/
 header {
-    color: black;
+    color: #022A32;
     padding-left: 1%;
     padding-top: 1.2%;
 }
@@ -35,10 +35,11 @@ header {
 #searchBar {
     margin-bottom: 20px;
 }
-#searchBar:focus {
-    background-color: yellow;
-    border: solid 3px aqua;
-}
+
+    #searchBar:focus {
+        background-color: #fffcf2;
+        border: solid 3px #5966fa;
+    }
 
 
 aside {
@@ -48,7 +49,7 @@ aside {
     z-index: 1; /* Сайд-бар будет поверх остальных элементов */
     top: 0; /* Сайдбар будет в самой верхней части страницы */
     left: 0;
-    background-color: #111; /* Черный цвет фона (задан в виде кода) */
+    background-color: #fffcf2; /* Светлый цвет фона (задан в виде кода) */
     overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
     padding-top: 1%;
     font-size: large;
@@ -74,4 +75,16 @@ header, footer, body {
     color: dimgrey;
     line-height: 66%;
     padding-left: 1%;
+}
+.review-container, .review-button {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+.review-text {
+    display: block;
+    margin-top: 0.5em;
+    padding-left: 1%;
+    padding-top: 1%;
 }
