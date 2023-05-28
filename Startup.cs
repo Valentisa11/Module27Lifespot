@@ -19,7 +19,7 @@ namespace LifeSpot
 
             app.UseRouting();
 
-            // Загрузка отдельных элементов для вставки в шаблон: заголовок, боковое меню и футер
+            // Р—Р°РіСЂСѓР·РєР° РѕС‚РґРµР»СЊРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РґР»СЏ РІСЃС‚Р°РІРєРё РІ С€Р°Р±Р»РѕРЅ: Р·Р°РіРѕР»РѕРІРѕРє, Р±РѕРєРѕРІРѕРµ РјРµРЅСЋ Рё С„СѓС‚РµСЂ
             string headerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "header.html"));
             string footerHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "footer.html"));
             string sideBarHtml = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "Views", "Shared", "sideBar.html"));
@@ -28,7 +28,7 @@ namespace LifeSpot
                 endpoints.MapGet("/", async context =>
                 {
                     var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
-                    // Загрузка самого шаблона со вставленными отдлеьными элементами
+                    // Р—Р°РіСЂСѓР·РєР° СЃР°РјРѕРіРѕ С€Р°Р±Р»РѕРЅР° СЃРѕ РІСЃС‚Р°РІР»РµРЅРЅС‹РјРё РѕС‚РґР»РµСЊРЅС‹РјРё СЌР»РµРјРµРЅС‚Р°РјРё
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                         .Replace("<!--HEADER-->", headerHtml)
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
@@ -38,7 +38,7 @@ namespace LifeSpot
                 endpoints.MapGet("/about", async context =>
                 {
                     var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "about.html");
-                    // Загрузка самого шаблона со вставленными отдлеьными элементами
+                    // Р—Р°РіСЂСѓР·РєР° СЃР°РјРѕРіРѕ С€Р°Р±Р»РѕРЅР° СЃРѕ РІСЃС‚Р°РІР»РµРЅРЅС‹РјРё РѕС‚РґР»РµСЊРЅС‹РјРё СЌР»РµРјРµРЅС‚Р°РјРё
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                         .Replace("<!--HEADER-->", headerHtml)
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
@@ -48,7 +48,7 @@ namespace LifeSpot
                 endpoints.MapGet("/testing", async context =>
                 {
                     var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
-                    // Загрузка самого шаблона со вставленными отдлеьными элементами
+                    // Р—Р°РіСЂСѓР·РєР° СЃР°РјРѕРіРѕ С€Р°Р±Р»РѕРЅР° СЃРѕ РІСЃС‚Р°РІР»РµРЅРЅС‹РјРё РѕС‚РґР»РµСЊРЅС‹РјРё СЌР»РµРјРµРЅС‚Р°РјРё
                     var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                         .Replace("<!--HEADER-->", headerHtml)
                         .Replace("<!--SIDEBAR-->", sideBarHtml)
