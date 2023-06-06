@@ -1,0 +1,82 @@
+<div class="slide">
+    <div class="slide-border">
+        <img id="image" class="slide-content" left="0" src="../Static/IMG/london.jpg" />
+    </div>
+    <div id="btn_left" class="slide-button left" onclick="slider.leftSlide()"><</div>
+    <div id="btn_right" class="slide-button right" onclick="slider.rightSlide()">></div>
+    <div class="point">
+        <div id="i0" class="circle"></div>
+        <div id="i1" class="circle"></div>
+        <div id="i2" class="circle"></div>
+    </div>
+</div>
+
+<script>
+    
+    let arrImages = ["ny.jpg", "london.jpg", "spb.jpg"];
+
+    // Объявляем класс слайдера
+    class Sliders {
+        constructor(arrImages) {
+            this.arrImages = arrImages;
+            this.current = 1;
+            document.querySelector('#i' + this.current).style.backgroundColor = 'gray';
+        }
+
+        // Выбор картинки слева
+        leftSlide() {
+            if (this.current > 0) {
+                document.querySelector('#i' + this.current).style.backgroundColor = 'lightgray';
+                image.src = "../Static/IMG/" + this.arrImages[--this.current];
+                document.querySelector('#i' + this.current).style.backgroundColor = 'gray';
+            }
+        }
+
+        // Выбор картинки справа
+        rightSlide() {
+            if (this.current < (arrImages.length - 1)) {
+                document.querySelector('#i' + this.current).style.backgroundColor = 'lightgray';
+                image.src = "../Static/IMG/" + this.arrImages[++this.current];
+                document.querySelector('#i' + this.current).style.backgroundColor = 'gray';
+            }
+        }
+    }
+    // Создаем объект класса Слайдер
+    let slider = new Sliders(arrImages);
+
+    let canDrag = false; // Индикатор захвата картинки мышкой
+    let x; // Координата объекта на момент нажатия кнопки мышки
+
+    // Перемещение картинки мышкой
+    image.addEventListener('mousemove', e => {
+        if (!canDrag)
+            return;
+
+        image.style.left = (e.clientX - x) + 'px';
+    });
+
+    // Завершение перемещения и при большом перемещении переключаем картинки
+    image.addEventListener('mouseup', e => {
+        canDrag = false;
+        if ((e.clientX - x) > 100) {
+            slider.leftSlide();
+        }
+        if ((e.clientX - x) < -100) {
+            slider.rightSlide();
+        }
+        image.style.left = 0;
+    });
+    // Начало перемещения картинки мышкой
+    image.addEventListener('mousedown', e => {
+        canDrag = true;
+        e.preventDefault();
+        x = e.clientX;
+    });
+
+    // Завершение перемещения и при выходе мышки за границу слайдера
+    document.addEventListener('mouseup', e => {
+        canDrag = false;
+        image.style.left = 0;
+    });
+
+</script>

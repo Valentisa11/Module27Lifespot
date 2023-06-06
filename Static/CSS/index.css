@@ -22,6 +22,7 @@
 
 /*Глобальные стили для хедеров на всём сайте*/
 header {
+    
     color: #022A32;
     padding-left: 1%;
     padding-top: 1.2%;
@@ -29,7 +30,7 @@ header {
 /*Стиль хедера для главной страницы имеет приоритет,
 так как используется селектор по идентификатору*/
 #header-index {
-    color: #650665;
+    color: #022A32;
 }
 
 #searchBar {
@@ -69,6 +70,7 @@ header, footer, body {
 }
 
 .footer {
+    display: inline-block;
     position: absolute;
     bottom: 0;
     font-size: medium;
@@ -88,3 +90,76 @@ header, footer, body {
     padding-left: 1%;
     padding-top: 1%;
 }
+
+/* Стиль для комментария*/
+.commit-text p {
+    margin: 0.5em;
+}
+
+/* Внешняя граница слайдера */
+.slide {
+    position: absolute;
+    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    float: left;
+    box-shadow: 5px 5px 5px #e3e3e3;
+    background-color: white;
+}
+
+/* Содержит картинку */
+.slide-content {
+    position: relative;
+
+}
+
+/* Точки индикаторы выбора картинки*/
+.point {
+    position: absolute;
+    left: 45%;
+    top: 90%;
+}
+
+/* Точка */
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: lightgray;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+/* Внутренняя граница слайдера */
+.slide-border {
+    overflow: hidden;
+}
+
+/* Кнопки слайдера */
+.slide-button {
+    position: absolute;
+    top: 180px;
+    background-color: darkgray;
+    opacity: 0.5;
+    height: 60px;
+    width: 100px;
+    transition: opacity 0.5s;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    font-size: 50px;
+    font-weight: bolder;
+    z-index: 10;
+}
+
+    .slide-button.left {
+        left: 7px;
+    }
+
+    .slide-button.right {
+        left: 89.5%;
+    }
+
+    .slide-button:hover {
+        opacity: 0.7;
+    }
